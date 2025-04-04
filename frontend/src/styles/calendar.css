@@ -1,0 +1,460 @@
+/* Calendar Styles */
+
+/* Custom scrollbar styles */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* React Calendar Overrides */
+.react-calendar {
+  background: transparent !important;
+  font-family: inherit;
+  border: none !important;
+  width: 100% !important;
+}
+
+.react-calendar__navigation {
+  margin-bottom: 0.5rem;
+}
+
+.react-calendar__navigation button {
+  background: transparent !important;
+  color: #fff !important;
+  min-width: 44px;
+  font-size: 1rem;
+  margin: 0;
+  transition: all 0.3s;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 0.5rem;
+}
+
+.react-calendar__navigation button[disabled] {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.react-calendar__month-view__weekdays {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none !important;
+}
+
+.react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none !important;
+}
+
+.react-calendar__tile {
+  position: relative;
+  background: transparent !important;
+  color: #fff !important;
+  height: 90px !important;
+  padding: 0.5rem !important;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  vertical-align: top !important;
+  text-align: left !important;
+  display: flex;
+  flex-direction: column;
+  overflow: visible !important;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus,
+.react-calendar__tile--active {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.react-calendar__tile--now {
+  background-color: rgba(6, 182, 212, 0.2) !important;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+  background-color: rgba(6, 182, 212, 0.3) !important;
+}
+
+.react-calendar__tile--hasActive {
+  background-color: rgba(6, 182, 212, 0.4) !important;
+}
+
+.react-calendar__tile > abbr {
+  position: absolute;
+  top: 0.35rem;
+  left: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.react-calendar__tile--now > abbr {
+  background-color: rgba(6, 182, 212, 0.7);
+  color: #fff;
+}
+
+/* Event items */
+.calendar-events {
+  width: 100%;
+  margin-top: 1.8rem !important;
+  position: relative;
+  z-index: 5;
+}
+
+.event-item {
+  margin-bottom: 0.25rem;
+  padding: 0.375rem 0.5rem;
+  border-radius: 0.25rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.event-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Event Colors */
+.event-meeting {
+  background-color: rgba(59, 130, 246, 0.8);
+  border-left: 3px solid rgb(59, 130, 246);
+}
+
+.event-task {
+  background-color: rgba(16, 185, 129, 0.8);
+  border-left: 3px solid rgb(16, 185, 129);
+}
+
+.event-deadline {
+  background-color: rgba(239, 68, 68, 0.8);
+  border-left: 3px solid rgb(239, 68, 68);
+}
+
+.event-personal {
+  background-color: rgba(168, 85, 247, 0.8);
+  border-left: 3px solid rgb(168, 85, 247);
+}
+
+/* Day View animations */
+.day-view .event-item {
+  animation: slideInRight 0.3s forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Week View animations */
+.week-view .day-column {
+  animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Calendar Legend */
+.calendar-legend {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  transition: all 0.2s;
+}
+
+.legend-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.legend-item.disabled {
+  opacity: 0.5;
+}
+
+.legend-color {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.legend-meeting {
+  background-color: rgb(59, 130, 246);
+}
+
+.legend-task {
+  background-color: rgb(16, 185, 129);
+}
+
+.legend-deadline {
+  background-color: rgb(239, 68, 68);
+}
+
+.legend-personal {
+  background-color: rgb(168, 85, 247);
+}
+
+/* Add styles for month view events */
+.month-view .calendar-events .event-count {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  font-size: 0.7rem;
+  padding: 0.1rem;
+  min-width: 1.2rem;
+  height: 1.2rem;
+  background-color: rgba(8, 145, 178, 0.8);
+  color: white;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Styles for event blocks in month view */
+.month-view .w-full.space-y-1 {
+  position: relative;
+  z-index: 3;
+}
+
+/* Define event block styles by type */
+.month-view .bg-blue-400\/80 {
+  background-color: rgba(96, 165, 250, 0.85) !important;
+  color: white;
+}
+
+.month-view .bg-green-400\/80 {
+  background-color: rgba(74, 222, 128, 0.85) !important;
+  color: white;
+}
+
+.month-view .bg-red-400\/80 {
+  background-color: rgba(248, 113, 113, 0.85) !important;
+  color: white;
+}
+
+.month-view .bg-purple-400\/80 {
+  background-color: rgba(192, 132, 252, 0.85) !important;
+  color: white;
+}
+
+/* Add shadow to event blocks */
+.month-view .text-left.px-2.py-1.rounded {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-bottom: 2px;
+}
+
+.month-view .text-left.px-2.py-1.rounded:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+/* Close button hover effect */
+.month-view .absolute.top-1.right-1 {
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.month-view .absolute.top-1.right-1:hover {
+  opacity: 1;
+}
+
+/* Multi-day events styling */
+.multi-day-events {
+  position: relative;
+  width: 100%;
+}
+
+/* Update multi-day event styling for simplified view */
+.month-view .multi-day-events > div {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+  margin-bottom: 2px;
+}
+
+.month-view .multi-day-events > div:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Style for continued events */
+.month-view .multi-day-events > div:not(:first-child) {
+  opacity: 0.9;
+}
+
+/* Round corners for multi-day events */
+.month-view .multi-day-events .rounded-l-md {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.month-view .multi-day-events .rounded-r-md {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.month-view .multi-day-events .rounded-md {
+  border-radius: 4px;
+}
+
+/* Ensure calendar row has consistent height */
+.react-calendar__month-view__days {
+  display: grid !important;
+  grid-template-rows: repeat(auto-fill, 90px) !important;
+}
+
+/* Fix for multi-day events that span week boundaries */
+.react-calendar__month-view__days__day {
+  position: relative;
+  overflow: visible !important;
+}
+
+/* Single-day events */
+.single-day-events {
+  margin-top: 0.25rem;
+}
+
+/* Traditional Calendar Styling */
+.traditional-calendar .react-calendar__month-view__days {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+  grid-template-rows: repeat(6, minmax(60px, auto)) !important;
+}
+
+.traditional-calendar .react-calendar__tile {
+  height: 60px !important;
+  padding: 0.25rem !important;
+  text-align: center !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.traditional-calendar .react-calendar__tile > abbr {
+  position: static;
+  font-size: 0.85rem;
+  width: auto;
+  height: auto;
+  margin-bottom: 0.25rem;
+}
+
+.calendar-tile {
+  transition: all 0.2s;
+  background-color: transparent !important;
+  border-radius: 0.5rem;
+}
+
+.calendar-tile:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.calendar-tile.selected-date {
+  background-color: rgba(6, 182, 212, 0.25) !important;
+  outline: 2px solid rgba(6, 182, 212, 0.5);
+}
+
+.traditional-calendar .react-calendar__month-view__days__day--neighboringMonth {
+  opacity: 0.4;
+}
+
+/* Event dots */
+.event-dots {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  margin-top: 2px;
+}
+
+.selected-date-events {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Event items in the selected date panel */
+.event-item {
+  border-left: 3px solid transparent;
+  transition: all 0.2s;
+}
+
+.event-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.meeting-event {
+  background-color: rgba(59, 130, 246, 0.15);
+  border-left-color: rgb(59, 130, 246);
+}
+
+.task-event {
+  background-color: rgba(16, 185, 129, 0.15);
+  border-left-color: rgb(16, 185, 129);
+}
+
+.deadline-event {
+  background-color: rgba(239, 68, 68, 0.15);
+  border-left-color: rgb(239, 68, 68);
+}
+
+.personal-event {
+  background-color: rgba(168, 85, 247, 0.15);
+  border-left-color: rgb(168, 85, 247);
+}
